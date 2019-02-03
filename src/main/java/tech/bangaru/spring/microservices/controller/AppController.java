@@ -1,6 +1,7 @@
 package tech.bangaru.spring.microservices.controller;
 
 
+import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -31,6 +32,12 @@ public class AppController {
 		return "success";
 		
 	}	
+	@RequestMapping(value="/api/v1/getLoggedinUser")
+	@ResponseBody
+	@ResponseStatus(HttpStatus.OK)
+	public String getLoggedinUser(Principal principal) {
+		return principal.getName();
+	}
 	
 	@RequestMapping(value="/api/v1/todaysDate",produces="application/json")
 	@ResponseBody

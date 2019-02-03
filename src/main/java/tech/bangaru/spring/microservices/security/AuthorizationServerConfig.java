@@ -26,7 +26,7 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
 		clients.inMemory().withClient("client")
 		.secret("{noop}secret")
 		.authorizedGrantTypes("password")
-		.resourceIds("oauth2-resources")
+		.resourceIds("read-resources")
 		.scopes("read");
 
 	}
