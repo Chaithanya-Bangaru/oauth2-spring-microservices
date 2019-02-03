@@ -18,8 +18,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		super.configure(auth);
-		auth.inMemoryAuthentication().withUser("raaj").password("{noop}123").roles("USER");
+		//super.configure(auth);
+		auth.inMemoryAuthentication().withUser("ivaan").password("{noop}12345").roles("USER");
 	}
 
 }

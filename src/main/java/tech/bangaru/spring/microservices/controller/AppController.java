@@ -10,7 +10,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +25,15 @@ public class AppController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@GetMapping(value="/")
+	@ResponseStatus(HttpStatus.OK)
+	public String defaultMethod() {
+		return "success";
+		
+	}	
 	
 	@RequestMapping(value="/api/v1/todaysDate",produces="application/json")
+	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
 	public String todaysDate() {
 		Date todaysDate = Calendar.getInstance().getTime();
@@ -34,6 +43,7 @@ public class AppController {
 	}
 	
 	@RequestMapping(value="/api/v1/insertUser")
+	@ResponseBody
 	@ResponseStatus(HttpStatus.CREATED)
 	public String insertUser() {
 		Users u = new Users();
@@ -44,6 +54,7 @@ public class AppController {
 	}
 	
 	@RequestMapping(value="/api/v1/getUsers")
+	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
 	public String getUsers() {
 		List<Users> userList = null;
@@ -56,6 +67,7 @@ public class AppController {
 	}
 	
 	@RequestMapping(value="/api/v1/insertManyUsers")
+	@ResponseBody
 	@ResponseStatus(HttpStatus.CREATED)
 	public String insertManyUsers() {
 		
