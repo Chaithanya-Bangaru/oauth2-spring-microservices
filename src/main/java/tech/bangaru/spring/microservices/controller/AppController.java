@@ -24,7 +24,7 @@ public class AppController {
 	private UserRepository userRepository;
 	
 	
-	@RequestMapping(value="/api/v1/todaysDate")
+	@RequestMapping(value="/api/v1/todaysDate",produces="application/json")
 	@ResponseStatus(HttpStatus.OK)
 	public String todaysDate() {
 		Date todaysDate = Calendar.getInstance().getTime();

@@ -1,7 +1,7 @@
-OAuth2.0 Impl Mechanism :
+OAuth2.0 Implementation Mechanism :
 
 
-Client working on behalf of Web user gets Web user's consent and thus gets authorized to continue the communication with below servers.
+Trusted Client working on behalf of Web user gets Web user's consent and thus gets authorized to continue the communication with below servers.
 
 
 Authorization Server
